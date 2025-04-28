@@ -1,3 +1,21 @@
+:root {
+  --color-primary: #6B4226; 
+  --color-accent: #D8A47F;
+  --color-background: #FFF8F0;
+  --color-card: #FFFFFF;
+  --text-color: #3E2C23;
+  --text-light: #7D5A4A; 
+  --shadow: 0 8px 24px rgba(107, 66, 38, 0.1);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--text-color);
+  font-family: 'Merriweather', serif;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,26 +23,24 @@
   text-align: center;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: 'Merriweather', serif;
+  margin-bottom: 0.5em;
+}
+
 .logo {
   height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  margin-bottom: 1em;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px var(--color-accent));
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -34,9 +50,92 @@
 }
 
 .card {
-  padding: 2em;
+  background: var(--color-card);
+  padding: 2rem;
+  margin: 1.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(107, 66, 38, 0.15);
 }
 
 .read-the-docs {
-  color: #888;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-top: 2em;
+}
+
+button {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.8em 1.5em;
+  margin: 0.5em;
+  border-radius: 12px;
+  font-family: 'Merriweather', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: var(--color-accent);
+  color: var(--text-color);
+  transform: scale(1.05);
+}
+
+input[type="text"] {
+  padding: 0.8em;
+  width: 250px;
+  border-radius: 10px;
+  border: 1px solid var(--color-accent);
+  font-family: 'Merriweather', serif;
+  font-size: 1rem;
+  margin: 1em;
+  background: #fff;
+  color: var(--text-color); 
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+  color: var(--text-light); 
+}
+
+
+
+.c-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.c-lista-pokemon {
+  background: var(--color-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.c-lista-pokemon:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(107, 66, 38, 0.15);
+}
+
+.c-lista-pokemon img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.c-lista-pokemon p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0.3em 0;
 }
