@@ -5,7 +5,7 @@ import Aleatorios from './Componentes/Aleatorios';
 import Capturados from './Componentes/Capturados';
 import Favoritos from './Componentes/Favoritos';
 import Listas from './Componentes/Listas';
-import Libros from './Componentes/Libros'; // <- Antes era Pokemon.jsx
+import Libros from './Componentes/Libros'; 
 import Usuarios from './Componentes/Usuarios';
 import Menu from './Componentes/Menu';
 
